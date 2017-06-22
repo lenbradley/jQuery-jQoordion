@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQoordion Demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="jquery.jqoordion.js"></script>
+    <script>
+        jQuery( function($) {
+
+            var accordion = $('ul.accordion').jQoordion({
+                allowMultiple       : true,
+                initialShowIndex    : 0,
+                initialState        : 'hidden',
+            });
+
+            $('#expand-all').on( 'click', function(e) {
+                e.preventDefault();
+                accordion.jQoordion( 'expandAll' );
+            });
+
+            $('#collapse-all').on( 'click', function(e) {
+                e.preventDefault();
+                accordion.jQoordion( 'collapseAll' );
+            });
+
+        });
+    </script>
+    <style>
+        body {
+            font-size: 14px;
+            font-family: Verdana, sans-serif;
+        }
+        h1, h2, h3, h4 {
+            font-size: 1.2em;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+        ul.accordion {
+            display: block;
+            margin: 0;
+            padding: 0;
+            max-width: 800px;
+        }
+        ul.accordion > li {
+            display: block;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul.accordion > li > h2.title {
+            overflow: hidden;
+            margin: 0 0 1px;
+            padding: 8px 10px;
+            background: #333;
+            color: #fff;
+        }
+        ul.accordion > li > h2.title:hover {
+            cursor: pointer;
+        }
+        ul.accordion > li > h2.title:after {
+            content: '+';
+            float: right;
+        }
+        ul.accordion > li.expanded > h2.title:after {
+            content: '-';
+        }
+        ul.accordion > li > div.content {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <p>
+        <a href="#" id="expand-all">+ Expand All</a> | <a href="#" id="collapse-all">- Collapse All</a>
+    </p>
+
+    <ul class="accordion">
+        <li>
+            <h2 class="title">Accordion 1 Title</h2>
+            <div class="content">
+                <p>Accordion 1 Content Here</p>
+            </div>
+        </li>
+        <li>
+            <h2 class="title">Accordion 2 Title</h2>
+            <div class="content">
+                <p>Accordion 2 Content Here</p>
+            </div>
+        </li>
+        <li>
+            <h2 class="title">Accordion 3 Title</h2>
+            <div class="content">
+                <p>Accordion 3 Content Here</p>
+            </div>
+        </li>
+        <li>
+            <h2 class="title">Accordion 4 Title</h2>
+            <div class="content">
+                <p>Accordion 4 Content Here</p>
+            </div>
+        </li>
+        <li>
+            <h2 class="title">Accordion 5 Title</h2>
+            <div class="content">
+                <p>Accordion 5 Content Here</p>
+            </div>
+        </li>
+        <li>
+            <h2 class="title">Accordion 6 Title</h2>
+            <div class="content">
+                <p>Accordion 6 Content Here</p>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>
