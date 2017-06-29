@@ -1,7 +1,7 @@
 /*!
  * jQoordion
  * Author: Len Bradley @ http://www.ninesphere.com
- * Version: 1.0.0
+ * Version: 1.0.1
  * Licensed under the MIT license
  *
  */
@@ -92,6 +92,10 @@
                 var parent      = this;
                 var accordion   = parent.getAccordion( elem );
 
+                if ( accordion.find( settings.contentSelector ).is(':animated') ) {
+                    return false;
+                }
+
                 if ( accordion.data('accordion-state') == 'expanded' ) {
                     return false;
                 }
@@ -136,6 +140,10 @@
                 }
 
                 var accordion = this.getAccordion( elem );
+
+                if ( accordion.find( settings.contentSelector ).is(':animated') ) {
+                    return false;
+                }
 
                 if ( accordion.data('accordion-state') == 'collapsed' ) {
                     return false;
